@@ -1,8 +1,8 @@
 package DataStructures.SortedList;
 
 /**
- * @author Juan O. López
- *
+ * Implementation of the SortedList ADT using an Array
+ * @author Fernando J. Bermudez
  */
 public class SortedArrayList<E extends Comparable<? super E>> extends AbstractSortedList<E> {
 	
@@ -72,22 +72,6 @@ public class SortedArrayList<E extends Comparable<? super E>> extends AbstractSo
 		else
 			return binarySearch(e, first, mid-1);
 	}
-	
-	/**************************************************************************
-	 * Exercise 3
-	 * 
-	 * Q: Could we also use binary search in SortedLinkedList?
-	 *    If you answered no, why not?
-	 *    If you answered yes, why didn't/shouldn't we do it?
-	 * 
-	 * A: Yes, we can use it, but it's not a good idea.
-	 *    When using an array we have random access to the elements in O(1), so
-	 *    that we may quickly access any of the values at any index when performing
-	 *    the binary search algorithm.  This makes binary search run in O(log n).
-	 *    However, in a linked list we must traverse the list whenever we need to
-	 *    access a particular index, so binary search would take O(n log n), which
-	 *    is worse than doing a sequential search (which is O(n)).
-	 */
 	
 	@SuppressWarnings("unchecked")
 	private void reAllocate() {
